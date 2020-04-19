@@ -1,0 +1,21 @@
+
+.vertical-align-content{
+ ion-img {
+   align: center;
+   margin: auto;
+   display: block;
+   width: 150px;
+   height: 150px;
+   display: block;
+ }
+ }
+
+
+
+.vertical-align-content > *
+{
+     display: block!important;
+     align-content: center!important;
+     align-items: center!important;
+}
+
