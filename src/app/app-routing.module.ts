@@ -8,6 +8,18 @@ const routes: Routes = [
     path: 'start',
     loadChildren: () => import('./start/start.module').then( m => m.StartPageModule)
   },
+  {
+    path: 'inscription',
+    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'choix-ville',
+    loadChildren: () => import('./choix-ville/choix-ville.module').then( m => m.ChoixVillePageModule)
+  },
 ];
 
 @NgModule({
