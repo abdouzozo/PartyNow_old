@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ChoixVillePageRoutingModule } from './choix-ville-routing.module';
+import { AccueilPageRoutingModule } from './accueil-routing.module';
 
-import { ChoixVillePage } from './choix-ville.page';
-
-
+import { AccueilPage } from './accueil.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ChoixVillePageRoutingModule,
+    AccueilPageRoutingModule
   ],
-  declarations: [ChoixVillePage]
+  declarations: [AccueilPage]
 })
-export class ChoixVillePageModule {}
+export class AccueilPageModule {}

@@ -3,7 +3,7 @@ import { Storage } from '@ionic/storage';
 
 
 declare var google;
-
+const STORAGE_KEY_VILLE_CHOISIE = 'villeChoisie';
 
 @Component({
   selector: 'app-choix-ville',
@@ -25,7 +25,7 @@ export class ChoixVillePage implements OnInit {
   villeChoisie : any;
 
 
-  constructor(public zone: NgZone, private storage: Storage,){
+  constructor(public zone: NgZone, private storage: Storage){
     this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
     this.autocomplete = { input: '' };
     this.autocompleteItems = [];
@@ -51,15 +51,24 @@ export class ChoixVillePage implements OnInit {
   SelectCity(item) {
     ///WE CAN CONFIGURE MORE COMPLEX FUNCTIONS SUCH AS UPLOAD DATA TO FIRESTORE OR LINK IT TO SOMETHING
     this.villeChoisie = item;
+    this.placeid = item.place_id;
+    this.storage.set(STORAGE_KEY_VILLE_CHOISIE, item);
+   /* this.storage.get(STORAGE_KEY_VILLE_CHOISIE).then( (val) =>{
+      console.log("ville choisie est " + val)
+    })*/
+  }
+
+  SelectSearchResult(item) {
+    ///WE CAN CONFIGURE MORE COMPLEX FUNCTIONS SUCH AS UPLOAD DATA TO FIRESTORE OR LINK IT TO SOMETHING
+    alert(JSON.stringify(item))
     this.placeid = item.place_id
-    this.storage.set('villeChoisie', item);
   }
 
   ngOnInit() {
   }
 
   ClearAutocomplete(){
-    this.autocompleteItems = []
-    this.autocomplete.input = ''
+    this.autocompleteItems = [];
+    this.autocomplete.input = '';
   }
 }

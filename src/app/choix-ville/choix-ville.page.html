@@ -18,11 +18,11 @@
     <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Search for a place"  (ionClear)="ClearAutocomplete()"></ion-searchbar>
   </ion-toolbar>
   <ion-list [hidden]="autocompleteItems.length == 0">
-    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="SelectSearchResult(item)">
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="SelectCity(item)">
       {{ item.description }}
     </ion-item>
   </ion-list>
 
   <br> <br> <br>
-  <ion-button type="submit" color="danger" expand="block" [routerLink]="['/Accueil']">Next</ion-button>
+  <ion-button type="submit" color="danger" expand="block" [routerLink]="['/accueil']">Next</ion-button>
 </ion-content>
