@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>choix-ville</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <br> <br> <br> <br>
+  <ion-text color="primary" class="ion-text-center">
+    <h2>Choisissez une ville !!</h2>
+  </ion-text>
+  <br> <br> <br>
 
+  <ion-toolbar color="primary">
+    <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Search for a place"  (ionClear)="ClearAutocomplete()"></ion-searchbar>
+  </ion-toolbar>
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="SelectSearchResult(item)">
+      {{ item.description }}
+    </ion-item>
+  </ion-list>
+
+  <br> <br> <br>
+  <ion-button type="submit" color="danger" expand="block" [routerLink]="['/Accueil']">Next</ion-button>
 </ion-content>

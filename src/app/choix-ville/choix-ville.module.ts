@@ -8,12 +8,15 @@ import { ChoixVillePageRoutingModule } from './choix-ville-routing.module';
 
 import { ChoixVillePage } from './choix-ville.page';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ChoixVillePageRoutingModule
+    ChoixVillePageRoutingModule,
+
   ],
   declarations: [ChoixVillePage]
 })

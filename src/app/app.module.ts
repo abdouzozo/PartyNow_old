@@ -9,10 +9,18 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AgmCoreModule } from '@agm/core';
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule,  IonicModule.forRoot(), AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyBJSkzEmhUSOJ6BpSFihRibGszFXNRBn48",
+      libraries: ["places"]
+    }),
+    IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
