@@ -12,12 +12,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule } from '@agm/core';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { SQLitePorter } from "@ionic-native/sqlite-porter/ngx";
+import { SQLite } from "@ionic-native/sqlite/ngx";
+
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,  IonicModule.forRoot(), AppRoutingModule,
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot(), HttpClientModule,
+      HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyBJSkzEmhUSOJ6BpSFihRibGszFXNRBn48",
       libraries: ["places"]
@@ -26,6 +32,7 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
+      SQLite, SQLitePorter,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

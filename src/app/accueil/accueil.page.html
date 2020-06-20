@@ -1,10 +1,41 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>accueil</ion-title>
-  </ion-toolbar>
+
 </ion-header>
+<br><br>
+<ion-content >
+    <div  position="floating">
+        <ion-icon id="person-circle-icon" class="ion-float-left" name="person-circle-outline" style="zoom:2.0;"></ion-icon>
+        <div class="ion-text-center">
+            <ion-label position="floating" >Accueil</ion-label>
+        </div>
+    </div>
+    <h2 align="center">Je participe à</h2>
+    <div>
+        <ion-card>
+            <ion-card-title> Halloween </ion-card-title>
+            <ion-card-header> 18:30 ~ 01:00</ion-card-header>
+            <ion-card-content>Cout de participation : 5€</ion-card-content>
 
-<ion-content>
-
+        </ion-card>
+    </div>
 </ion-content>
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="schedule">
+      <ion-icon name="search"></ion-icon>
+      <ion-label>Search</ion-label>
+
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers">
+      <ion-icon name="pint"></ion-icon>
+      <ion-label>Home</ion-label>
+      <ion-badge>0</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <ion-icon name="add"></ion-icon>
+      <ion-label>Add</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
