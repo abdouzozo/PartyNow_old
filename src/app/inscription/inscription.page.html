@@ -11,27 +11,27 @@
   <form>
     <ion-item lines="full">
       <ion-label position="floating">First name</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="newUser.prenom" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Last name</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="newUser.nom" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="newUser.email" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-label position="floating" >Password</ion-label>
+      <ion-input type="password" [(ngModel)]="newUser.motDePasse" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block" [routerLink]="['/choix-ville']">Sign Up</ion-button>
+        <ion-button type="submit" color="danger" expand="block"  (click)="addNewUser()" [routerLink]="['/choix-ville']">Sign Up</ion-button>
 
         <span class="divider line one-line">or</span>
 

@@ -24,6 +24,10 @@ const routes: Routes = [
     path: 'accueil',
     loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
   },
+  {
+    path: 'chercher-soiree',
+    loadChildren: () => import('./chercher-soiree/chercher-soiree.module').then( m => m.ChercherSoireePageModule)
+  },
 ];
 
 @NgModule({
